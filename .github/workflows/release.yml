@@ -64,8 +64,7 @@ jobs:
       - name: Inject Blob (Windows)
         if: matrix.os == 'windows-latest'
         run: |
-          npx postject ${{ matrix.artifact_name }} NODE_SEA_BLOB sea-prep.blob \
-            `--sentinel-fuse NODE_SEA_FUSE_fce680ab2cc467b6e072b8b5df1996b2`
+          npx postject ${{ matrix.artifact_name }} NODE_SEA_BLOB sea-prep.blob `--sentinel-fuse NODE_SEA_FUSE_fce680ab2cc467b6e072b8b5df1996b2`
 
       - name: Upload Artifacts
         uses: actions/upload-artifact@v4
