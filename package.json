@@ -1,0 +1,25 @@
+{
+    "name": "contract-puller",
+    "version": "1.0.0",
+    "description": "CLI tool to fetch smart contract source code from Etherscan or Blockscout APIs",
+    "main": "index.js",
+    "bin": {
+        "contract-puller": "./index.js"
+    },
+    "scripts": {
+        "start": "node index.js",
+        "build:sea": "node --experimental-sea-config sea-config.json && rm -f contract-puller && cp $(command -v node) contract-puller && chmod +w contract-puller && codesign --remove-signature contract-puller && npx -y postject contract-puller NODE_SEA_BLOB sea-prep.blob --sentinel-fuse NODE_SEA_FUSE_fce680ab2cc467b6e072b8b5df1996b2 --macho-segment-name NODE_SEA && codesign --sign - contract-puller"
+    },
+    "keywords": [
+        "ethereum",
+        "smart-contract",
+        "etherscan",
+        "blockscout",
+        "cli"
+    ],
+    "author": "",
+    "license": "MIT",
+    "engines": {
+        "node": ">=14.0.0"
+    }
+}
